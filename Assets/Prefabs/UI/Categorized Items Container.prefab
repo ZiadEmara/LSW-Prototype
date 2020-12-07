@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1638330383062797288}
   - component: {fileID: 1638330383062797287}
   - component: {fileID: 1638330383062797289}
-  - component: {fileID: 6827352074235749125}
+  - component: {fileID: 1099954503463179535}
   m_Layer: 5
-  m_Name: Items Container
+  m_Name: Categorized Items Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &6827352074235749125
+--- !u!114 &1099954503463179535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,13 +113,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1638330383062797285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bde9e2c84277c744691aebc799926df4, type: 3}
+  m_Script: {fileID: 11500000, guid: a0964b7a5ea0d824cbc2cbaa31d439e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemUIElementPrefab: {fileID: 8363523335340558788, guid: 73f4bde588511154ab439badafa421b5,
+    type: 3}
   itemType: 3
   itemTypeText: {fileID: 1638330383636028737}
-  itemUIElementPrefab: {fileID: 8363523335340558788, guid: 5617b5ccc58d51a49a676f400ed83c5c,
-    type: 3}
 --- !u!1 &1638330383636028799
 GameObject:
   m_ObjectHideFlags: 0

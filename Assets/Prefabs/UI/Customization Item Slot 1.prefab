@@ -166,9 +166,9 @@ GameObject:
   - component: {fileID: 8363523335340558792}
   - component: {fileID: 8363523335340558791}
   - component: {fileID: 8363523335340558790}
-  - component: {fileID: 8363523335340558793}
+  - component: {fileID: 7311849406429789397}
   m_Layer: 5
-  m_Name: Item Slot
+  m_Name: Customization Item Slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8363523335340558793
+--- !u!114 &7311849406429789397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8363523335340558788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424a5de783a85844ab898f190d7a0230, type: 3}
+  m_Script: {fileID: 11500000, guid: 657519b13cf42894cad8c9b92ddc3d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemNameText: {fileID: 8363523335783901032}

@@ -35,7 +35,8 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Character", System.StringComparison.Ordinal))
+        if (collision.tag.Equals("Character", System.StringComparison.Ordinal)
+            || collision.tag.Equals("Player", System.StringComparison.Ordinal))
         {
             // Make sure the owner isn't destroyed
             if (Owner != null)

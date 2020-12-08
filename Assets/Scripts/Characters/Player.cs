@@ -8,6 +8,7 @@ public class Player : ACharacter
     [SerializeField] CustomCharacter defaultCustomChar = null;
     // Controls the look of the character preview in the customization screen
     [SerializeField] CharacterRenderer customScreenPreviewRenderer = null;
+    [SerializeField] GameObject interactButtonImage = null;
 
     Camera mainCam = null;
     Vector2 mousePos = Vector2.zero;
@@ -54,7 +55,7 @@ public class Player : ACharacter
     {
         base.TakeDamage(amount);
         // Check for player death
-        if(currentHP <= 0)
+        if (currentHP <= 0)
         {
             // Stop the game
             Time.timeScale = 0f;
@@ -74,6 +75,20 @@ public class Player : ACharacter
             // Equip the default sprite in that slot
             EquipItem(item.ItemType, defaultCustomChar.GetSprite(item.ItemType));
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Show the interact button if near any interactable object
+        if (collision.gameObject.tag.Equals("Interactable", System.StringComparison.Ordinal))
+            interactButtonImage.SetActive(true);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        // Hide the interact button when exiting the range of any interactable object
+        if (collision.gameObject.tag.Equals("Interactable", System.StringComparison.Ordinal))
+            interactButtonImage.SetActive(false);
     }
 
     void OnDisable()

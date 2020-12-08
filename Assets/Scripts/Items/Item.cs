@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Holds all information related to an item.
+/// </summary>
 [CreateAssetMenu(fileName = "Item", menuName = "ScriptableObjects/Item", order = 0)]
 public class Item : ScriptableObject
 {

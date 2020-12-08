@@ -9,7 +9,7 @@ public class House : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu = null;
 
-    bool playerInRange = true;
+    bool playerInRange = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

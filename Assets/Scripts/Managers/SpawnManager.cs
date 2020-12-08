@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// </summary>
 public class SpawnManager : MonoBehaviour
 {
-    [Tooltip("Time between each wave (After all enemies spawn).")]
+    [Tooltip("Time between each wave (Starts counting after all enemies spawn).")]
     [SerializeField] int waveInterval = 30;
     [Tooltip("Time between each spawn (enemies spawn in random bursts).")]
     [SerializeField] int spawnInterval = 10;
@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Text timerText = null;
 
     int currentWave = 1;
-    // Remaining number of enemies to spawn.
+    // Remaining number of enemies to spawn this wave
     int numberOfEnemies = 0;
     float timer = 0f;
 
@@ -44,8 +44,8 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator StartWave()
     {
-        // Determine the number of enemies to spawn this wave
-        numberOfEnemies = Mathf.Clamp(3 * currentWave + 1, 2, maxSpawnPerWave);
+        // Determine the number of enemies to spawn during this wave
+        numberOfEnemies = Mathf.Clamp(3 * currentWave + 1, 4, maxSpawnPerWave);
 
         while (numberOfEnemies > 0)
         {
@@ -80,7 +80,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    // Spawns a single enemy 
+    // Spawns a single random enemy in a random spot
     void Spawn()
     {
         int randEnemy = Random.Range(0, enemyPrefabs.Count);

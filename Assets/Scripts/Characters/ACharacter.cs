@@ -18,7 +18,6 @@ public abstract class ACharacter : MonoBehaviour
 
     protected int currentHP = 0;
     protected Rigidbody2D rb = null;
-    protected bool move = false;
     protected Vector2 moveDir = Vector2.zero;
     protected Vector2 shootDir = Vector2.zero;
 
@@ -36,15 +35,10 @@ public abstract class ACharacter : MonoBehaviour
 
     protected virtual void Initialize()
     {
+        // Make sure the character renderer has the correct sprites
         charRenderer.EquipAll(customChar);
         currentHP = maxHP;
         healthBar.fillAmount = 1f;
-    }
-
-    protected void Move(Vector2 dir)
-    {
-        move = true;
-        moveDir = dir;
     }
 
     protected void Shoot()
@@ -66,7 +60,8 @@ public abstract class ACharacter : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (move)
+        // Keep moving as long as the movement isn't zero
+        if (moveDir != Vector2.zero)
         {
             rb.MovePosition(rb.position + moveDir * moveSpeed * Time.fixedDeltaTime);
         }

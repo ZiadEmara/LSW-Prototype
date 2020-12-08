@@ -57,7 +57,6 @@ public class Enemy : ACharacter
     // Moves in a random direction
     void MoveRand()
     {
-        Vector2 dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        Move(dir);
+        moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
     }
 }

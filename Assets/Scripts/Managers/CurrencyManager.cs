@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages everything related to the player's currency
+/// </summary>
 public class CurrencyManager : MonoBehaviour
 {
+    // The current gold
     [SerializeField] int gold = 100;
     [SerializeField] int maxGold = 9999;
     [SerializeField] Text goldText = null;
@@ -35,9 +39,9 @@ public class CurrencyManager : MonoBehaviour
         UpdateGoldText();
     }
 
-    public bool CanBuy(int amount)
+    public bool CanBuy(int price)
     {
-        return gold >= amount;
+        return gold >= price;
     }
 
     void UpdateGoldText()

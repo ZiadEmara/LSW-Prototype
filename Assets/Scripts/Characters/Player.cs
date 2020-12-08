@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : ACharacter
 {
+    // For now respawn = restart game
+    [SerializeField] float respawnTime = 5f;
     // Contains the default sprites for each body part.
     [SerializeField] CustomCharacter defaultCustomChar = null;
     // Controls the look of the character preview in the customization screen
     [SerializeField] CharacterRenderer customScreenPreviewRenderer = null;
     [SerializeField] GameObject interactButtonImage = null;
 
+    // REferences the main camera to translate mouse position into world coordinates
     Camera mainCam = null;
     Vector2 mousePos = Vector2.zero;
 
@@ -19,8 +23,6 @@ public class Player : ACharacter
         mainCam = Camera.main;
         // Make sure the character preview has the same outfit
         customScreenPreviewRenderer.EquipAll(customChar);
-        // Start listening for movement input, which will be captured in Update
-        Move(Vector2.zero);
     }
 
     void OnEnable()
@@ -30,6 +32,7 @@ public class Player : ACharacter
     }
     void Update()
     {
+        // Don't fire if it's still on cooldown
         if (timer > 0)
             timer -= Time.deltaTime;
         else if (Input.GetButtonDown("Fire1"))
@@ -59,7 +62,15 @@ public class Player : ACharacter
         {
             // Stop the game
             Time.timeScale = 0f;
+            // Respawn in a few seconds
+            StartCoroutine(Respawn());
         }
+    }
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(respawnTime);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void OnCustomizationButtonPressed(ItemType type, Sprite sprite)

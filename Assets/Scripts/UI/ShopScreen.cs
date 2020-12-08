@@ -43,7 +43,7 @@ public class ShopScreen : MonoBehaviour
         items = itemsManager.GetUnlockedItems();
         for (int i = 0; i < items.Count; i++)
         {
-            // Don't add items with sell price 0
+            // Don't add items with selling price 0
             if (items[i].ItemSellPrice != 0)
                 sellListContainer.AddItem(items[i]);
         }
@@ -51,9 +51,11 @@ public class ShopScreen : MonoBehaviour
 
     void OnShopItemButtonPressed(ItemType type, string itemName)
     {
+        // The item that was pressed
         Item item = itemsManager.GetItem(itemName);
         if (buyListContainer.gameObject.activeInHierarchy)
         {
+            // Means that an item was bought since the "buy list" is active.
             if (!currencyManager.CanBuy(item.ItemPrice))
             {
                 // The player doesn't have enough gold. Don't purchase
@@ -64,7 +66,6 @@ public class ShopScreen : MonoBehaviour
                 // Fire the "item bought" event.
                 if (onItemBought != null)
                     onItemBought(item);
-                // Means that an item was bought since the "buy list" is active.
                 // Remove item from the "buy list" and add it to the "sell list"
                 buyListContainer.RemoveItem(item);
                 sellListContainer.AddItem(item);
@@ -74,10 +75,10 @@ public class ShopScreen : MonoBehaviour
         }
         else if (sellListContainer.gameObject.activeInHierarchy)
         {
+            // Means that an item was sold since the "sell list" is active.
             // Fire the "item sold" event
             if (onItemSold != null)
                 onItemSold(item);
-            // Means that an item was sold since the "sell list" is active.
             // Remove item from the "sell list" and add it to the "buy list"
             sellListContainer.RemoveItem(item);
             buyListContainer.AddItem(item);

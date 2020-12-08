@@ -9,17 +9,38 @@ public class Player : ACharacter
     // Controls the look of the character preview in the customization screen
     [SerializeField] CharacterRenderer customScreenPreviewRenderer = null;
 
-    void Start()
+    Camera mainCam = null;
+    Vector2 mousePos = Vector2.zero;
+
+    protected override void Start()
     {
-        Initialize();
+        base.Start();
+        mainCam = Camera.main;
         // Make sure the character preview has the same outfit
         customScreenPreviewRenderer.EquipAll(customChar);
+        // Start listening for movement input, which will be captured in Update
+        Move(Vector2.zero);
     }
 
     void OnEnable()
     {
         CustomizationScreen.onItemButtonPressed += OnCustomizationButtonPressed;
         ShopScreen.onItemSold += OnItemSold;
+    }
+    void Update()
+    {
+        if (timer > 0)
+            timer -= Time.deltaTime;
+        else if (Input.GetButtonDown("Fire1"))
+        {
+            shootDir = mousePos - rb.position;
+            Shoot();
+        }
+
+        moveDir.x = Input.GetAxisRaw("Horizontal");
+        moveDir.y = Input.GetAxisRaw("Vertical");
+
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void EquipItem(ItemType type, Sprite sprite)

@@ -123,9 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6c2f1bce684454bba7cb3e9670356c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfDestructTime: 2
+  selfDestructTime: 1
   projectileImpulse: 7
-  projectileDamage: 10
+  projectileDamage: 5
 --- !u!50 &-3177500128955786490
 Rigidbody2D:
   serializedVersion: 4

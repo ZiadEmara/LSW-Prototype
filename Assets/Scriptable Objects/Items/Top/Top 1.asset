@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98184c2cfa040e64d827209167c02cfc, type: 3}
   m_Name: Top 1
   m_EditorClassIdentifier: 
-  itemName: Light Armor
+  itemName: Leather Top
   itemPrice: 0
-  itemSprite: {fileID: 6961899845104690864, guid: 5c23b8ae09bb8184499a56090248d680,
+  itemSellPrice: 0
+  itemSprite: {fileID: -3297212185145446590, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
   isUnlocked: 1
   itemType: 1

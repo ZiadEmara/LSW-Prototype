@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a14e4584e403ee14b989fc43dc29905d, type: 3}
-  m_Name: Player
+  m_Name: Enemy 2
   m_EditorClassIdentifier: 
-  headSprite: {fileID: -8503143199325220528, guid: 5c23b8ae09bb8184499a56090248d680,
+  headSprite: {fileID: 6320688944268607779, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
-  topSprite: {fileID: -3297212185145446590, guid: 5c23b8ae09bb8184499a56090248d680,
+  topSprite: {fileID: 5322893879577607818, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
-  bottomSprite: {fileID: 1501045915454456772, guid: 5c23b8ae09bb8184499a56090248d680,
+  bottomSprite: {fileID: 6789211589194484356, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
-  mainSprite: {fileID: 2220677355330914621, guid: 5c23b8ae09bb8184499a56090248d680,
+  mainSprite: {fileID: 6013154902334333398, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
-  subSprite: {fileID: -3148493317596502739, guid: 5c23b8ae09bb8184499a56090248d680,
+  subSprite: {fileID: 1456911508468862982, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}

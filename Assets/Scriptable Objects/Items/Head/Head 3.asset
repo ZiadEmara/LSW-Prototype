@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98184c2cfa040e64d827209167c02cfc, type: 3}
-  m_Name: Wand
+  m_Name: Head 3
   m_EditorClassIdentifier: 
-  itemName: Wand
-  itemPrice: 300
-  itemSellPrice: 180
-  itemSprite: {fileID: -4744086687867056179, guid: 5c23b8ae09bb8184499a56090248d680,
+  itemName: Helmet
+  itemPrice: 200
+  itemSellPrice: 100
+  itemSprite: {fileID: -7162407540572722055, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
   isUnlocked: 0
-  itemType: 3
+  itemType: 0

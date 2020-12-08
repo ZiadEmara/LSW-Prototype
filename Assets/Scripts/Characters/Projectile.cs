@@ -11,8 +11,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] float projectileImpulse = 20f;
     [SerializeField] int projectileDamage = 10;
 
-    // The person who shot this projectile.
-    public ACharacter Owner { get; set; }
+    // To prevent friendly fire
+    public string OwnerTag { get; set; }
 
     float timer = 0f;
     Rigidbody2D rb = null;
@@ -38,13 +38,8 @@ public class Projectile : MonoBehaviour
         // Make sure that enemies don't hit each other
         if ((collision.tag.Equals("Character", System.StringComparison.Ordinal)
             || collision.tag.Equals("Player", System.StringComparison.Ordinal))
-            && (!collision.tag.Equals(Owner.tag, System.StringComparison.Ordinal)))
+            && (!collision.tag.Equals(OwnerTag, System.StringComparison.Ordinal)))
         {
-            // Make sure the owner isn't destroyed
-            if (Owner != null)
-                // Don't damage your owner!
-                if (collision.gameObject == Owner.gameObject)
-                    return;
             // Damage the character hit
             collision.gameObject.GetComponent<ACharacter>().TakeDamage(projectileDamage);
             Destroy(this.gameObject);

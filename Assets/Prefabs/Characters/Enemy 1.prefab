@@ -250,9 +250,10 @@ MonoBehaviour:
   projectile: {fileID: 635878500124268819, guid: 8c6b305d445b89f41b1c04cc35816291,
     type: 3}
   healthBar: {fileID: 8363597284759771174}
-  maxHP: 20
+  maxHP: 30
   moveSpeed: 2
   atkSpeed: 0.5
+  goldReward: 20
 --- !u!1 &7097471263484806719
 GameObject:
   m_ObjectHideFlags: 0

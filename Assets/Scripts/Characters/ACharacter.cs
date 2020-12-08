@@ -41,23 +41,17 @@ public abstract class ACharacter : MonoBehaviour
         healthBar.fillAmount = 1f;
     }
 
-    // Only move when this is called. Used mainly when enemies keep moving and stopping.
     protected void Move(Vector2 dir)
     {
         move = true;
         moveDir = dir;
     }
 
-    protected void StopMoving()
-    {
-        move = false;
-    }
-
     protected void Shoot()
     {
         Quaternion rot = Quaternion.Euler(transform.rotation.x, transform.rotation.y, Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg);
         Projectile shot = Instantiate(projectile, transform.position, rot).GetComponent<Projectile>();
-        shot.Owner = this;
+        shot.OwnerTag = this.tag;
         // Put shooting on cooldown
         timer = 1 / atkSpeed;
     }

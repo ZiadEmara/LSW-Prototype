@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e4584e403ee14b989fc43dc29905d, type: 3}
   m_Name: Enemy 1
   m_EditorClassIdentifier: 
-  headSprite: {fileID: 6840462936656373734, guid: 5c23b8ae09bb8184499a56090248d680,
+  headSprite: {fileID: 7787023001015827380, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
-  topSprite: {fileID: 6579053670280243926, guid: 5c23b8ae09bb8184499a56090248d680,
+  topSprite: {fileID: 207514231300002710, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
   bottomSprite: {fileID: -8369974668244227227, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
-  mainSprite: {fileID: 6489220211478588827, guid: 5c23b8ae09bb8184499a56090248d680,
+  mainSprite: {fileID: 3990455378766444005, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}
-  subSprite: {fileID: 2308401456393198744, guid: 5c23b8ae09bb8184499a56090248d680,
+  subSprite: {fileID: 673879026328445780, guid: 5c23b8ae09bb8184499a56090248d680,
     type: 3}

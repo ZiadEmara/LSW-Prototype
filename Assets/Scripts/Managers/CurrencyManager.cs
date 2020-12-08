@@ -15,6 +15,7 @@ public class CurrencyManager : MonoBehaviour
     {
         ShopScreen.onItemBought += OnItemBought;
         ShopScreen.onItemSold += OnItemSold;
+        Enemy.onEnemyDeath += OnEnemyDeath;
     }
 
     void Start()
@@ -54,9 +55,15 @@ public class CurrencyManager : MonoBehaviour
         AddGold(item.ItemSellPrice);
     }
 
+    void OnEnemyDeath(Enemy enemy)
+    {
+        AddGold(enemy.GoldReward);
+    }
+
     void OnDisable()
     {
         ShopScreen.onItemBought -= OnItemBought;
         ShopScreen.onItemSold -= OnItemSold;
+        Enemy.onEnemyDeath -= OnEnemyDeath;
     }
 }

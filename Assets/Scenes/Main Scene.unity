@@ -2135,14 +2135,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allItems:
-  - {fileID: 11400000, guid: 3608e633d17aca44ebf71a777b310c04, type: 2}
-  - {fileID: 11400000, guid: 7fb80e9b7d093fb42bad4c6734c29276, type: 2}
-  - {fileID: 11400000, guid: cf76737ea505735408aeeb68a073754b, type: 2}
-  - {fileID: 11400000, guid: 860554e8ddd1f3e4bbfc5bbf99bd592d, type: 2}
   - {fileID: 11400000, guid: eaccbbea55465314a91222a617deab75, type: 2}
-  - {fileID: 11400000, guid: 7cffd0c010ed96046815be19d82a6c3c, type: 2}
   - {fileID: 11400000, guid: 02cc843d2aab3bc48815ff93c514a053, type: 2}
+  - {fileID: 11400000, guid: 5eb7002ccab5a0d48a152fbc18643c47, type: 2}
+  - {fileID: 11400000, guid: 18535b62d3cae0a4d812d2c50d559df1, type: 2}
+  - {fileID: 11400000, guid: cf76737ea505735408aeeb68a073754b, type: 2}
+  - {fileID: 11400000, guid: 7bd0cca02c64b524082b7f9335601344, type: 2}
+  - {fileID: 11400000, guid: 9ad7056915361684bb11c8a3cd8a704c, type: 2}
+  - {fileID: 11400000, guid: a643924d8a5bc2b488c11c32899f51b2, type: 2}
+  - {fileID: 11400000, guid: 7fb80e9b7d093fb42bad4c6734c29276, type: 2}
+  - {fileID: 11400000, guid: 0d27aa98fc6bcd44c8d926c855f31b74, type: 2}
+  - {fileID: 11400000, guid: 6f6a1278e1a0dcf458f20eae4b271067, type: 2}
+  - {fileID: 11400000, guid: 79326f2b9938df8469f0a1df3b0f63f6, type: 2}
+  - {fileID: 11400000, guid: 3608e633d17aca44ebf71a777b310c04, type: 2}
   - {fileID: 11400000, guid: bc11b05d254b95a4ab61db5cf0c18f7a, type: 2}
+  - {fileID: 11400000, guid: 34c49feb5d8e6d648a1b925e03e094fe, type: 2}
+  - {fileID: 11400000, guid: 0df85d34ddd747e43844c29a734aa8c7, type: 2}
+  - {fileID: 11400000, guid: 7cffd0c010ed96046815be19d82a6c3c, type: 2}
+  - {fileID: 11400000, guid: 860554e8ddd1f3e4bbfc5bbf99bd592d, type: 2}
+  - {fileID: 11400000, guid: 4135ab20570df854b9ffff720130193e, type: 2}
+  - {fileID: 11400000, guid: 7c010b7d1588f14489cf7d273ea61cc0, type: 2}
 --- !u!4 &945883529
 Transform:
   m_ObjectHideFlags: 0
@@ -2184,13 +2196,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07aec0283f8961e459619a21b55b2b1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveInterval: 30
-  spawnInterval: 10
+  waveInterval: 20
+  spawnInterval: 7
   maxSpawnPerWave: 20
   maxSpawnPerBurst: 4
   player: {fileID: 1361809623}
   enemyPrefabs:
   - {fileID: 4338368537738634618, guid: 1f0321a30a264e349949bf8e5f0ca779, type: 3}
+  - {fileID: 4338368537738634618, guid: 20f7885461cff474ea062bf4fc20b4e9, type: 3}
   spawnPoints:
   - {fileID: 163917382}
   - {fileID: 1735280355}

@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8584906, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.86274517, g: 0.3803922, b: 0.3647059, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 26ce41ffe15fd3e4e83210571aaa8200, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6661b1bbda5a42f4dacf5567044d3010, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f0df8925706aaed49818bfbae73e6207, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6661b1bbda5a42f4dacf5567044d3010, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 3481866561050739051}
   - component: {fileID: 230325765382102320}
   m_Layer: 8
-  m_Name: Enemy 2
+  m_Name: Jester
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

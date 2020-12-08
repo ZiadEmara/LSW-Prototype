@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Parent class for any character, whether it's an ally or enemy
@@ -10,6 +11,7 @@ public abstract class ACharacter : MonoBehaviour
     [SerializeField] protected CustomCharacter customChar = null;
     [SerializeField] protected CharacterRenderer charRenderer = null;
     [SerializeField] protected GameObject projectile = null;
+    [SerializeField] Image healthBar = null;
     [SerializeField] protected int maxHP = 100;
     [SerializeField] protected float moveSpeed = 1f;
     [SerializeField] protected float atkSpeed = 1f;
@@ -36,6 +38,7 @@ public abstract class ACharacter : MonoBehaviour
     {
         charRenderer.EquipAll(customChar);
         currentHP = maxHP;
+        healthBar.fillAmount = 1f;
     }
 
     // Only move when this is called. Used mainly when enemies keep moving and stopping.
@@ -53,9 +56,16 @@ public abstract class ACharacter : MonoBehaviour
     protected void Shoot()
     {
         Quaternion rot = Quaternion.Euler(transform.rotation.x, transform.rotation.y, Mathf.Atan2(shootDir.y, shootDir.x) * Mathf.Rad2Deg);
-        Instantiate(projectile, transform.position, rot);
+        Projectile shot = Instantiate(projectile, transform.position, rot).GetComponent<Projectile>();
+        shot.Owner = this;
         // Put shooting on cooldown
         timer = 1 / atkSpeed;
+    }
+
+    public virtual void TakeDamage(int amount)
+    {
+        currentHP -= amount;
+        healthBar.fillAmount = (float)currentHP / (float)maxHP;
     }
 
     void FixedUpdate()

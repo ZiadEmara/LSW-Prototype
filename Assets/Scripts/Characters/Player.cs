@@ -50,6 +50,18 @@ public class Player : ACharacter
         customChar.ChangeSprite(type, sprite);
     }
 
+    public override void TakeDamage(int amount)
+    {
+        base.TakeDamage(amount);
+        // Check for player death
+        if(currentHP <= 0)
+        {
+            Destroy(this.gameObject);
+            // Stop the game
+            Time.timeScale = 0f;
+        }
+    }
+
     void OnCustomizationButtonPressed(ItemType type, Sprite sprite)
     {
         EquipItem(type, sprite);

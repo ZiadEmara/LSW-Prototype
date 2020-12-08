@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7019459143954038541}
   - component: {fileID: -3177500128955786490}
   m_Layer: 0
-  m_Name: Enemey Projectile 1
+  m_Name: Enemey Projectile 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: c6cd82e8187e03a42b453aed4e88b2d8, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.5949242, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e6c2f1bce684454bba7cb3e9670356c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selfDestructTime: 6
-  projectileImpulse: 2
+  selfDestructTime: 2
+  projectileImpulse: 7
   projectileDamage: 10
 --- !u!50 &-3177500128955786490
 Rigidbody2D:

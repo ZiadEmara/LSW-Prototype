@@ -16,6 +16,7 @@ public class ShopScreen : MonoBehaviour
     public static OnItemSold onItemSold;
 
     [SerializeField] ItemsManager itemsManager = null;
+    [SerializeField] CurrencyManager currencyManager = null;
     [SerializeField] ItemsContainer buyListContainer = null;
     [SerializeField] ItemsContainer sellListContainer = null;
     [SerializeField] Text shopStatusText = null;
@@ -53,27 +54,35 @@ public class ShopScreen : MonoBehaviour
         Item item = itemsManager.GetItem(itemName);
         if (buyListContainer.gameObject.activeInHierarchy)
         {
-            // Means that an item was bought since the "buy list" is active.
-            // Remove item from the "buy list" and add it to the "sell list"
-            buyListContainer.RemoveItem(item);
-            sellListContainer.AddItem(item);
-            // Update the status text
-            shopStatusText.text = "Purchase Success!";
-            // Fire the "item bought" event
-            if (onItemBought != null)
-                onItemBought(item);
+            if (!currencyManager.CanBuy(item.ItemPrice))
+            {
+                // The player doesn't have enough gold. Don't purchase
+                shopStatusText.text = "Not enough Gold!";
+            }
+            else
+            {
+                // Fire the "item bought" event.
+                if (onItemBought != null)
+                    onItemBought(item);
+                // Means that an item was bought since the "buy list" is active.
+                // Remove item from the "buy list" and add it to the "sell list"
+                buyListContainer.RemoveItem(item);
+                sellListContainer.AddItem(item);
+                // Update the status text
+                shopStatusText.text = "Purchase Success!";
+            }
         }
         else if (sellListContainer.gameObject.activeInHierarchy)
         {
+            // Fire the "item sold" event
+            if (onItemSold != null)
+                onItemSold(item);
             // Means that an item was sold since the "sell list" is active.
             // Remove item from the "sell list" and add it to the "buy list"
             sellListContainer.RemoveItem(item);
             buyListContainer.AddItem(item);
             // Update the status text
             shopStatusText.text = "Item Sold!";
-            // Fire the "item sold" event
-            if (onItemSold != null)
-                onItemSold(item);
         }
     }
 

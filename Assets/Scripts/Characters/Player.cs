@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class Player : ACharacter
 {
-    [SerializeField] int gold = 100;
     // Contains the default sprites for each body part.
     [SerializeField] CustomCharacter defaultCustomChar = null;
     // Controls the look of the character preview in the customization screen
     [SerializeField] CharacterRenderer customScreenPreviewRenderer = null;
-
-    public int Gold { get { return gold; } }
 
     void Start()
     {
@@ -22,18 +19,7 @@ public class Player : ACharacter
     void OnEnable()
     {
         CustomizationScreen.onItemButtonPressed += OnCustomizationButtonPressed;
-        ShopScreen.onItemBought += OnItemBought;
         ShopScreen.onItemSold += OnItemSold;
-    }
-
-    public void AddGold(int amount)
-    {
-        gold += amount;
-    }
-
-    public void SubtractGold(int amount)
-    {
-        gold -= amount;
     }
 
     public void EquipItem(ItemType type, Sprite sprite)
@@ -48,14 +34,8 @@ public class Player : ACharacter
         EquipItem(type, sprite);
     }
 
-    void OnItemBought(Item item)
-    {
-        SubtractGold(item.ItemPrice);
-    }
-
     void OnItemSold(Item item)
     {
-        AddGold(item.ItemSellPrice);
         // Check if the sold item is equipped
         if (customChar.IsEquipped(item.ItemSprite))
         {
@@ -67,7 +47,6 @@ public class Player : ACharacter
     void OnDisable()
     {
         CustomizationScreen.onItemButtonPressed -= OnCustomizationButtonPressed;
-        ShopScreen.onItemBought -= OnItemBought;
         ShopScreen.onItemSold -= OnItemSold;
     }
 }

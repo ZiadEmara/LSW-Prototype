@@ -124,7 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selfDestructTime: 4
-  projectileImpulse: 5
+  projectileImpulse: 20
+  projectileDamage: 10
 --- !u!50 &-3177500128955786490
 Rigidbody2D:
   serializedVersion: 4

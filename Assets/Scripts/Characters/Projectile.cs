@@ -20,6 +20,8 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        // Apply an impulse force as soon as the projectile spawns
+        rb.AddForce(transform.right * projectileImpulse, ForceMode2D.Impulse);
         timer = selfDestructTime;
     }
 
@@ -31,18 +33,15 @@ public class Projectile : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    private void FixedUpdate()
-    {
-        rb.AddForce(transform.right * projectileImpulse, ForceMode2D.Impulse);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.Equals("Character", System.StringComparison.Ordinal))
         {
-            // Don't damage your owner!
-            if (collision.gameObject == Owner.gameObject)
-                return;
+            // Make sure the owner isn't destroyed
+            if (Owner != null)
+                // Don't damage your owner!
+                if (collision.gameObject == Owner.gameObject)
+                    return;
             // Damage the character hit
             collision.gameObject.GetComponent<ACharacter>().TakeDamage(projectileDamage);
             Destroy(this.gameObject);

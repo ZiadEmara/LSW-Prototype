@@ -29,7 +29,7 @@ public abstract class ACharacter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         Initialize();
     }
@@ -66,6 +66,8 @@ public abstract class ACharacter : MonoBehaviour
     {
         currentHP -= amount;
         healthBar.fillAmount = (float)currentHP / (float)maxHP;
+        if (currentHP <= 0)
+            Destroy(this.gameObject);
     }
 
     void FixedUpdate()

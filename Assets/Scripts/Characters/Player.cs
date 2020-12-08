@@ -56,7 +56,6 @@ public class Player : ACharacter
         // Check for player death
         if(currentHP <= 0)
         {
-            Destroy(this.gameObject);
             // Stop the game
             Time.timeScale = 0f;
         }

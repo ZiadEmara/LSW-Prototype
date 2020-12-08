@@ -45,7 +45,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator StartWave()
     {
         // Determine the number of enemies to spawn this wave
-        numberOfEnemies = Mathf.Clamp(2 * currentWave + 1, 2, maxSpawnPerWave);
+        numberOfEnemies = Mathf.Clamp(3 * currentWave + 1, 2, maxSpawnPerWave);
 
         while (numberOfEnemies > 0)
         {

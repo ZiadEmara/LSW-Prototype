@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 893656679339685060}
   - component: {fileID: 1361809621}
   - component: {fileID: 1361809622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +50,7 @@ MonoBehaviour:
   charRenderer: {fileID: 4745207893549812518}
   projectile: {fileID: 635878500124268819, guid: 31afbe51db81ea84582ecdb082b015ec,
     type: 3}
+  healthBar: {fileID: 0}
   maxHP: 100
   moveSpeed: 4
   atkSpeed: 1
@@ -119,6 +120,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5601551544577248528, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5601551544577248529, guid: 5db1f50612626cf46af30ce5fdbc7290,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -178,6 +184,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Custom Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551544577248530, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551544887618378, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551544887618379, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551545011089928, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551545011089929, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551545295170690, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551545295170691, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551546167744841, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551546167744846, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551546204989968, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601551546204989971, guid: 5db1f50612626cf46af30ce5fdbc7290,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5db1f50612626cf46af30ce5fdbc7290, type: 3}

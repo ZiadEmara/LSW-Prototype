@@ -12,9 +12,9 @@ public class Player : ACharacter
     Camera mainCam = null;
     Vector2 mousePos = Vector2.zero;
 
-    protected override void Start()
+    protected override void Initialize()
     {
-        base.Start();
+        base.Initialize();
         mainCam = Camera.main;
         // Make sure the character preview has the same outfit
         customScreenPreviewRenderer.EquipAll(customChar);

@@ -29,12 +29,12 @@ public abstract class ACharacter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    protected virtual void Start()
+    void Start()
     {
         Initialize();
     }
 
-    public void Initialize()
+    protected virtual void Initialize()
     {
         charRenderer.EquipAll(customChar);
         currentHP = maxHP;
